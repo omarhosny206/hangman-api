@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsc && node dist/server.js",
     "dev": "tsc && concurrently \"tsc -w\" \"nodemon dist/server.js\"",
-    "build": "tsc"
+    "build": "npm install && tsc"
   },
   "author": "",
   "license": "ISC",

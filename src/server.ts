@@ -21,12 +21,12 @@ app.use("/signup", signupRoute);
 app.use("/login", loginRoute);
 app.use("/users", userRoute);
 
-app.use(notFoundHandler.handle);
-app.use(errorHandler.handle);
-
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   return res.json({ message: "hello mr mouse" });
 });
+
+app.use(notFoundHandler.handle);
+app.use(errorHandler.handle);
 
 app.listen(PORT, async () => {
   console.log("Server is running ....");

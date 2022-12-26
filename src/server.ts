@@ -1,8 +1,8 @@
-import dotenv from "dotenv";
-import express, {Express, Request} from "express";
 import cors from "cors";
+import dotenv from "dotenv";
+import express, { Express, NextFunction, Request, Response } from "express";
 
-import {connectToDb} from "./config/mongo-config";
+import { connectToDb } from "./config/mongo-config";
 import * as errorHandler from "./middlewares/error-handler";
 import * as notFoundHandler from "./middlewares/not-found-handler";
 import loginRoute from "./routes/login-route";
@@ -24,7 +24,11 @@ app.use("/users", userRoute);
 app.use(notFoundHandler.handle);
 app.use(errorHandler.handle);
 
+app.get("/", (req: Request, res: Response, next: NextFunction) => {
+  return res.json({ message: "hello mr mouse" });
+});
+
 app.listen(PORT, async () => {
-    console.log("Server is running ....");
-    await connectToDb();
+  console.log("Server is running ....");
+  await connectToDb();
 });

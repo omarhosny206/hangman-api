@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "prod": "node dist/server.js",
+    "start": "tsc && node dist/server.js",
     "dev": "tsc && concurrently \"tsc -w\" \"nodemon dist/server.js\"",
     "build": "npm install && tsc"
   },

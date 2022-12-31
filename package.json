@@ -9,6 +9,9 @@
     "dev": "tsc && concurrently \"tsc -w\" \"nodemon dist/server.js\"",
     "build": "npm install && tsc"
   },
+  "engines": {
+    "node": "16.17.1"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

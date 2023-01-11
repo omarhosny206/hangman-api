@@ -1,13 +1,13 @@
-import {NextFunction, Request, RequestHandler, Response} from "express";
-import {JwtPayload} from "jsonwebtoken";
-import {ObjectId} from "mongoose";
+import { NextFunction, Request, RequestHandler, Response } from "express";
+import { JwtPayload } from "jsonwebtoken";
+import { ObjectId } from "mongoose";
 
 import IUser from "../interfaces/user-interface";
 import * as userService from "../services/user-service";
 import ApiError from "../utils/api-error";
 import * as jwt from "../utils/jwt";
 
-export const authorizeToken: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
+export const authenticateByToken: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const authorizationHeader: string | undefined = req.headers["authorization"];
 

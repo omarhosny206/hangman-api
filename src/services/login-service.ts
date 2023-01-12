@@ -7,7 +7,7 @@ import ApiError from "../utils/api-error";
 import * as jwt from "../utils/jwt";
 
 export const login = async (userLogin: ILoginRequest): Promise<ILoginResponse> => {
-  try {
+    try {
     const { email, password } = userLogin;
     const storedUser = await userService.getByEmail(email);
 
